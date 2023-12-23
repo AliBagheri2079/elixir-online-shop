@@ -16,8 +16,9 @@
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
     "<THIRD_PARTY_MODULES>",
-    "",
-    "^(@/(.*)$)|^(@$)"
+    "(.css)$",
+    "^(@/(.*)$)",
+    "^[./]"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
