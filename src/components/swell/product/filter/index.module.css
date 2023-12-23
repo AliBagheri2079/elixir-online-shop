@@ -1,0 +1,8 @@
+.trackContainer {
+  --slider-track-bg: var(--mantine-color-body);
+}
+
+.label {
+  top: unset;
+  bottom: var(--mantine-spacing-sm);
+}
