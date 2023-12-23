@@ -1,0 +1,42 @@
+{
+  "language": {
+    "english": "english",
+    "persian": "persian"
+  },
+  "navigation": {
+    "apps": {
+      "category": "apps",
+      "home": "all apps",
+      "updates": "updates"
+    },
+    "categories": {
+      "category": "categories",
+      "photography": "photography",
+      "graphic_design": "graphic design",
+      "video": "video",
+      "illustrations": "illustrations",
+      "ui_ux": "ui/ux",
+      "3d_ar": "3d/ar"
+    },
+    "fonts": {
+      "category": "fonts",
+      "manage_fonts": "manage fonts"
+    },
+    "resource_links": {
+      "category": "resource links",
+      "stock": "stock",
+      "tutorials": "tutorials",
+      "portfolio": "portfolio",
+      "behance": "behance",
+      "social_forum": "social forum"
+    }
+  },
+  "page": {
+    "product": {
+      "search_placeholder": "write a somthing to filter product",
+      "filter_label": "filter product price",
+      "add_button": "add to list",
+      "checkout_button": "checkout"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "language": {
+    "english": "انگلیسی",
+    "persian": "فارسی"
+  },
+  "navigation": {
+    "apps": {
+      "category": "برنامه ها",
+      "home": "تمام برنامه ها",
+      "updates": "به روز رسانی"
+    },
+    "categories": {
+      "category": "دسته بندی ها",
+      "photography": "عکاسی",
+      "graphic_design": "طراحی گرافیک",
+      "video": "ویدیو",
+      "illustrations": "ایلوستیشن",
+      "ui_ux": "ظاهر-تجربه",
+      "3d_ar": "سه بعدی-مدل"
+    },
+    "fonts": {
+      "category": "فونت ها",
+      "manage_fonts": "مدیریت فونت ها"
+    },
+    "resource_links": {
+      "category": "لینک منابع",
+      "stock": "سهام",
+      "tutorials": "آموزش ها",
+      "portfolio": "پورتفولیو",
+      "behance": "بی هنس",
+      "social_forum": "سوالات متداول"
+    }
+  },
+  "page": {
+    "product": {
+      "search_placeholder": "برای جستجو کردن مقداری را وارد کنید",
+      "filter_label": "محدودسازی قیمت محصولات",
+      "add_button": "افزودن به لیست",
+      "checkout_button": "پرداخت"
+    }
+  }
+}
