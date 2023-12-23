@@ -1,0 +1,20 @@
+body {
+  --mantine-color-body: rgba(255 255 255 / 30%);
+  --mantine-blur-default: blur(1.15rem);
+  --mantine-font-family: var(--font-poppins);
+  --mantine-font-family-headings: var(--font-poppins);
+
+  @mixin dark {
+    --mantine-color-body: rgba(16 18 27 / 40%);
+  }
+
+  @mixin rtl {
+    --mantine-font-family: var(--font-sahel);
+    --mantine-font-family-headings: var(--font-sahel);
+  }
+}
+
+.glassmorphism {
+  background-color: var(--mantine-color-body);
+  backdrop-filter: var(--mantine-blur-default);
+}
