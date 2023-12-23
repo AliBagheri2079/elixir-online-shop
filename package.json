@@ -25,6 +25,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.29.1",
     "@mantine/carousel": "^7.3.2",
     "@mantine/colors-generator": "^7.3.2",
     "@mantine/core": "^7.3.2",
