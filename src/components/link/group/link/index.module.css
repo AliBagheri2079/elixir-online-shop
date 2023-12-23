@@ -1,0 +1,7 @@
+.root {
+  border-radius: var(--mantine-radius-default);
+
+  &:hover {
+    background: var(--nl-bg);
+  }
+}
