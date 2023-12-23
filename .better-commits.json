@@ -62,6 +62,12 @@
         "emoji": "🧹"
       },
       {
+        "value": "styles",
+        "label": "styles",
+        "hint": "Used when there are code formatting and style changes that do not change the system in any way",
+        "emoji": "💄"
+      },
+      {
         "value": "",
         "label": "none"
       }
