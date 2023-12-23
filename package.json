@@ -1,5 +1,20 @@
 {
   "name": "elixir-online-shop",
+  "title": "Elixir Online Shop",
+  "description": "Online Shopping Marketplace: Clothes, Shoes, Beauty, Electronics and More",
+  "author": {
+    "name": "Ali Bagheri",
+    "email": "alibagheri2079.dev@gmail.com",
+    "url": "https://www.github.com/alibagheri2079"
+  },
+  "keywords": [
+    "Elixir",
+    "Online Shop",
+    "Clothes",
+    "Shoes",
+    "Beauty",
+    "Electronics"
+  ],
   "version": "0.1.0",
   "private": true,
   "scripts": {
