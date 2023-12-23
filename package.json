@@ -37,6 +37,7 @@
     "clsx": "^2.0.0",
     "embla-carousel-autoplay": "^8.0.0-rc17",
     "embla-carousel-react": "^7.1.0",
+    "framer-motion": "^10.16.16",
     "negotiator": "^0.6.3",
     "next": "14.0.4",
     "react": "^18",
