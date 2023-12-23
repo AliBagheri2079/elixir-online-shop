@@ -34,6 +34,7 @@
     "@mantine/notifications": "^7.3.2",
     "@tabler/icons-react": "^2.44.0",
     "chroma-js": "^2.4.2",
+    "clsx": "^2.0.0",
     "embla-carousel-autoplay": "^8.0.0-rc17",
     "embla-carousel-react": "^7.1.0",
     "negotiator": "^0.6.3",
