@@ -19,11 +19,19 @@ export function useSingleProduct({ lang, slug }: Props) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
+    let mounted = true;
+
     getProductBySlugOrId(lang, slug)
-      .then(data =>
-        dispatch({ type: 'SET_SINGLE_PRODUCT_ITEM', payload: data }),
-      )
+      .then(data => {
+        if (mounted) {
+          dispatch({ type: 'SET_SINGLE_PRODUCT_ITEM', payload: data });
+        }
+      })
       .catch(error => dispatch({ type: 'HANDLE_ERROR', payload: error }));
+
+    return () => {
+      mounted = false;
+    };
   }, [lang, slug]);
 
   return state;

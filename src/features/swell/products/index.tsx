@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment, useRef } from 'react';
 
 import {
   Center,
@@ -11,7 +11,6 @@ import {
   Stack,
   Transition,
 } from '@mantine/core';
-import { useIntersection } from '@mantine/hooks';
 
 import {
   ErrorAlert,
@@ -22,7 +21,6 @@ import {
 } from '@/components';
 import type { Locale } from '@/types';
 import {
-  PRODUCT_MAX_PRICE,
   PRODUCTS_PER_PAGE,
   PUBLIC_LAYOUT_CONTENT_BLOCK_PADDING,
   PUBLIC_LAYOUT_CONTENT_MAX_SIZE,
@@ -38,33 +36,15 @@ type Props = {
 };
 
 export function Products({ lang, search, filter }: Props) {
-  const [limit, setLimit] = useState(PRODUCTS_PER_PAGE);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  const { ref: loaderRef, entry } = useIntersection({
+  const { data, error, isLoading, isLoaderMounted, loaderRef } = useProducts({
     root: containerRef.current,
-    threshold: 1,
-  });
-  const { data, isLoading, error, total } = useProducts({
     lang,
-    limit,
     search,
-    filter: +(filter ?? PRODUCT_MAX_PRICE),
+    filter,
   });
 
-  const inView = entry?.isIntersecting;
-  const inLoaderMounted = total > limit;
-  const isInfiniteScroll = total - limit >= PRODUCTS_PER_PAGE;
-
-  useEffect(() => {
-    if (inView) {
-      setLimit(preLimit =>
-        isInfiniteScroll ? preLimit + PRODUCTS_PER_PAGE : total,
-      );
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inView]);
-
+  const isNothingFound = !isLoading && data?.length === 0;
   const notFoundMessage =
     lang === 'en' ? 'Does`t exist item' : 'گزینه ای وجود ندارد';
 
@@ -112,7 +92,7 @@ export function Products({ lang, search, filter }: Props) {
         <Fragment>
           {error ? (
             <ErrorAlert message={error.message} />
-          ) : !isLoading && Number(data?.length) === 0 ? (
+          ) : isNothingFound ? (
             <ErrorAlert message={notFoundMessage} />
           ) : (
             <SimpleGrid cols={{ xs: 2, sm: 3, lg: 4 }} spacing='xs'>
@@ -123,7 +103,7 @@ export function Products({ lang, search, filter }: Props) {
         </Fragment>
 
         <Transition
-          mounted={inLoaderMounted}
+          mounted={isLoaderMounted}
           transition='slide-up'
           duration={500}
           exitDuration={500}

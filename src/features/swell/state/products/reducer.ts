@@ -1,24 +1,31 @@
 import type { ProductResults, PromiseResponse } from '@/types';
 
-type ReducerState = Omit<PromiseResponse<ProductResults[]>, 'isLoading'>;
+type ReducerState = PromiseResponse<ProductResults[]>;
 type ReducerAction =
-  | { type: 'SET_PRODUCTS_ITEM'; payload: ProductResults[] }
+  | { type: 'SET_PRODUCTS_DATA'; payload: ProductResults[] }
+  | { type: 'HANDLE_LOADING'; payload: boolean }
   | { type: 'HANDLE_ERROR'; payload: Error };
 
 type Reducer = (state: ReducerState, action: ReducerAction) => ReducerState;
 
-export const productsReducer: Reducer = (state, action) => {
-  switch (action.type) {
-    case 'SET_PRODUCTS_ITEM': {
+export const productsReducer: Reducer = (state, { type, payload }) => {
+  switch (type) {
+    case 'SET_PRODUCTS_DATA': {
       return {
         ...state,
-        data: action.payload,
+        data: payload,
+      };
+    }
+    case 'HANDLE_LOADING': {
+      return {
+        ...state,
+        isLoading: payload,
       };
     }
     case 'HANDLE_ERROR': {
       return {
         ...state,
-        error: action.payload,
+        error: payload,
       };
     }
     default: {

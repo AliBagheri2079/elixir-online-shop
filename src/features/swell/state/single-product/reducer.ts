@@ -7,19 +7,19 @@ type ReducerAction =
 
 type Reducer = (state: ReducerState, action: ReducerAction) => ReducerState;
 
-export const singleProductReducer: Reducer = (state, action) => {
-  switch (action.type) {
+export const singleProductReducer: Reducer = (state, { type, payload }) => {
+  switch (type) {
     case 'SET_SINGLE_PRODUCT_ITEM': {
       return {
         ...state,
-        data: action.payload,
+        data: payload,
         isLoading: false,
       };
     }
     case 'HANDLE_ERROR': {
       return {
         ...state,
-        error: action.payload,
+        error: payload,
         isLoading: false,
       };
     }
