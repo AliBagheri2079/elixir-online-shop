@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 
-// TODO
 export const rootMetadata: Metadata = {
-  metadataBase: new URL('https://dennis-snellenberg-portfolio.vercel.app/'),
+  metadataBase: new URL('https://elixir-online-shop.vercel.app/'),
   title: {
     template: '%s | Elixir Online Shop',
     default: 'Elixir Online Shop • Online Shopping Marketplace',
@@ -34,7 +33,7 @@ export const rootMetadata: Metadata = {
     creator: '@AliBagheri2079',
     creatorId: '1467726470533754880',
     images: {
-      url: 'https://dennis-snellenberg-portfolio.vercel.app/screenshot.png',
+      url: 'https://elixir-online-shop.vercel.app/screenshot.png',
       alt: 'Elixir Online Shop Screenshot',
     },
   },
